@@ -4,7 +4,16 @@ sudo: false
 addons:
   apt:
     packages:
-      - oracle-java8-installer
+    - oracle-java8-installer
 after_success:
-  - bash <(curl -s https://codecov.io/bash)
-  - ./gradlew sonarqube -Dsonar.projectKey=tavisci-test -Dsonar.organization=dobarskyi -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=e0fd279de712cbdff36da9b5a07fbf4a58998a05
+- bash <(curl -s https://codecov.io/bash)
+- "./gradlew sonarqube -Dsonar.projectKey=tavisci-test -Dsonar.organization=dobarskyi
+  -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=e0fd279de712cbdff36da9b5a07fbf4a58998a05"
+deploy:
+  provider: releases
+  api_key:
+    secure: esCSTuM4HMUa0hgKuRNSdQgkHKSnxqXXQYmiUYtFzel7a82kr46PYjvOpdBTRzZVH9fD6v/L0rHCWavEG1tYPH+KUOwVfshv4udrl2fOK4Hn7pU6rUIlv+g8eKigp6akW38E86hVj2kNYjEQ4ItMTPXV+QzjWPsIOQmk1ceI+FCcNKcrQ7kKWm9TBUnQboxfAeJByO7qfgBSU0tpqvu8hV0A23QIMsk+up9+GH8S/jH0RiYPCztGA2Nau5lyGv/d2fXXp+CorNgS5ImVDqN2x6V6SeR8PlEvz6NKWRyqg5IXz8Rb98oIYe9Us5lkTp9oSYgkUCWYmJeBUN/F+7PClmeUUAK/10VyhPx0jfOvHwakWgIVHgr5I2d8bs9I/gEzRHUWL9m/+WuneiSul4FLI+8f5cdTGleCS3HoS+dcDCSYqy0L8TRyKZZ/CzD4g/rMVelB8CwDBpmeCLkHYvRmE3ntH7f3qlGzbCLqgZHxA7TN6W1CIAcXQpKxUrgYUgtAOBpIL4lVr9hxoLuxyTQMrAiTer+9aU2lau1BtlpuO9cdpzXAenGpf+Aj5Ueg48t2xefJDQDnacOHZNm9ATp7hD/CKaaW87SK1uOgpcYIEPjPoxhDYpNfmYb8dgcbTyC7wW16ar+K4QxUawZGZpfJYw0YbaYBUM7pkkh8NTOqYeU=
+  file_glob: true
+  file: buid/libs/*
+  on:
+    repo: Dobarskyi/travisci-test
