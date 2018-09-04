@@ -16,6 +16,7 @@ deploy:
   file_glob: true
   file: buid/libs/*
   on:
+    repo: Dobarskyi/travisci-test
     tags: true
     branches:
       only:
