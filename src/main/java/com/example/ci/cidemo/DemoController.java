@@ -13,7 +13,7 @@ import java.time.Duration;
 public class DemoController {
 
     public static final int PAYLOAD_LENGTH = 100;
-    public static final int SLIGHT_DELAY_MS = 3000;
+    public static final int SLIGHT_DELAY_MS = 100;
 
     @GetMapping(
             value = "/demo",
