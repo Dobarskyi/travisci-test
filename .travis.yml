@@ -10,6 +10,7 @@ after_success:
 - "./gradlew sonarqube -Dsonar.projectKey=tavisci-test -Dsonar.organization=dobarskyi
   -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=e0fd279de712cbdff36da9b5a07fbf4a58998a05"
 deploy:
+  skip_cleanup: true
   provider: releases
   api_key: ${KEY}
   file_glob: true
