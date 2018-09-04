@@ -19,17 +19,18 @@ apply plugin: 'io.spring.dependency-management'
 apply plugin: 'jacoco'
 
 jacoco {
-	toolVersion = "0.8.1"
-	reportsDir = file("$buildDir/reports")
+	toolVersion = "0+"
 }
 
 jacocoTestReport {
+	executionData files("${buildDir}/jacoco/test.exec")
 	reports {
 		xml.enabled true
-		csv.enabled false
-		html.enabled false
+		xml.destination file("${buildDir}/jacoco.xml")
 	}
 }
+
+check.finalizedBy(jacocoTestReport)
 
 group = 'com.example.ci'
 version = '0.0.1-SNAPSHOT'
