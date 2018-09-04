@@ -11,8 +11,7 @@ after_success:
   -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=e0fd279de712cbdff36da9b5a07fbf4a58998a05"
 deploy:
   provider: releases
-  api_key:
-    secure: Z9Wfr+dBNvrzFKc6UfDbQ12wjZV+xNBXHS85dcyosGnXM7/te2XuHrh4Ytu85kIIcqt7mDf7WjODiSsu1Aux5ZO8NCYY9r3iOaSR3FttWBiMMUM43RT2tWcUTBbqwHf2Nat2fBZoVKTFxUXuQHXtJxoaz6zSJXTyLCpfJVO8pPKukBD5nFeSESBxDX4IeCXkeR+7fmcNmwhYVVVMIBhZnv/K16CqZDzouFEKWEYrATBO9l6GZ3AD0Oh7mbxYTqTvlzMPVoi3PxL4gV5bsKx3k6cawyZ8G6RInz6xgM7FSsmJ762ivSCAZdaQZZEqFdSv1XekXqRbf2yP8f1sObL/2IeHkZJLXN3LdvXJRM2wUpUbrhIG4TDRuNfP9//VacgKcqRHbPlTQaJIg6ySrmO+lvSi3we9LojNp7fl8Axo+e1kEBAYFfQD7O2NHiqdUDtKnR0hL8BsujUP20RwKG6ktFTdtzoCJ7f5Hqxl+g8FMSYeoi29vh9qNfd18pV3oMTfNukcdwaSC5TnbniUUAbVs6iGMluMDRtAS0El8k1CZL2oa1AYLe4t/gTYwtPenvKjLHqilwCWXeD4WwU1RoFTm0D1s8dJZa9k0gVUvDKA9+pl3Rw5sc+sYEyXYxPBzc8ZQB2wzqfJi0lDzkIahVRmY4rgI6jboB2Ml6gmPd6W7HI=
+  api_key: ${KEY}
   file_glob: true
   file: buid/libs/*
   on:
